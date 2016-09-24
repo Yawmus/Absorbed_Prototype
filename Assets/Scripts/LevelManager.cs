@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour {
 
 	List<Bin> bins = new List<Bin>();
 	GameObject finishZone;
+	public GameObject door; 
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,7 @@ public class LevelManager : MonoBehaviour {
 		finishZone = transform.FindChild ("FinishZone").gameObject;
 		finishZone.GetComponent<MeshRenderer> ().material.color = Color.black;
 		finishZone.GetComponent<FinishZone> ().enabled = false;
+		door.GetComponent<MoveOnComplete> ().enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -29,10 +31,13 @@ public class LevelManager : MonoBehaviour {
 		if (temp) {
 			finishZone.GetComponent<MeshRenderer> ().material.color = Color.white;
 			finishZone.GetComponent<FinishZone> ().enabled = true;
+			door.GetComponent<MoveOnComplete> ().enabled = true;
 			Debug.Log ("Level Complete - open door");
 		} else {
 			finishZone.GetComponent<MeshRenderer> ().material.color = Color.black;
 			finishZone.GetComponent<FinishZone> ().enabled = false;
+			door.GetComponent<MoveOnComplete> ().enabled = false;
+			Debug.Log ("LEVEL NOT COMPLETE"); 
 		}
 	}
 
