@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< Updated upstream
 - path: Assets/_levels/Prototype.unity
+=======
+- path: Assets/Prototype.unity
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
