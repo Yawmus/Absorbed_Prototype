@@ -14,7 +14,7 @@ public class Orb : MonoBehaviour {
     [HideInInspector]
     public bool thrown = false;
 	public bool grabbed = false;
-	public enum Type { Flip, Speed, Fire, Basic }
+	public enum Type { Flip, Speed, Swap, Fire, Basic }
 
 	public Type type = Type.Basic;
 
@@ -73,10 +73,6 @@ public class Orb : MonoBehaviour {
                 GetComponent<Rigidbody>().useGravity = false;
                 GetComponent<Rigidbody>().AddForce(-Physics.gravity * GetComponent<Rigidbody>().mass * Time.deltaTime * acc);
                 acc++; // Increase acceleration so as to make upward movement speed up. 
-            }
-            else if (type == Type.Speed)
-            {
-               
             }
         }
         else
