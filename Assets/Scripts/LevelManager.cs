@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour {
 			finishZone.GetComponent<MeshRenderer> ().material.color = Color.black;
 			finishZone.GetComponent<FinishZone> ().enabled = false;
 			door.GetComponent<MoveOnComplete> ().enabled = false;
-			Debug.Log ("LEVEL NOT COMPLETE"); 
+			//Debug.Log ("LEVEL NOT COMPLETE"); 
 		}
 	}
 

@@ -72,6 +72,15 @@ public class Player : MonoBehaviour {
 
 		cc.Move(vel * Time.deltaTime);
 
+
+		ray = Camera.main.ScreenPointToRay (new Vector3 (Screen.width / 2, Screen.height / 2, 0));
+		if (Physics.Raycast (ray, out hit, 1.5f)) {
+			GameObject go = hit.collider.gameObject;
+			if (go.name == "Reset" && Input.GetMouseButtonDown (0)) {
+				go.GetComponent<ResetSwitch> ().orb.GetComponent<Rigidbody>().transform.position = go.transform.position + new Vector3 (0, .25f, 0);
+			}
+		}
+
 		if (grabbedOrb == null) {
 			ray = Camera.main.ScreenPointToRay (new Vector3 (Screen.width / 2, Screen.height / 2, 0));
 			if (Physics.Raycast (ray, out hit, 1.5f)) {
@@ -113,6 +122,10 @@ public class Player : MonoBehaviour {
 		if (Input.GetButtonUp ("Absorb")) {
 			canAbsorb = true;
 		}
+
+
+		if (Input.GetButtonDown ("Reset"))
+			Application.LoadLevel (Application.loadedLevel);
 	}
 
 	Vector3 swapPos;
