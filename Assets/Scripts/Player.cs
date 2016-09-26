@@ -56,7 +56,6 @@ public class Player : MonoBehaviour {
 
 		Ray ray = new Ray(transform.position, Vector3.up * mod);
 		if ((cc.collisionFlags & CollisionFlags.Above) != 0 || cc.isGrounded) {
-			Debug.Log ("on the ground or ceiling");
 			vSpeed = 0;
 			// We are grounded, so recalculate
 			// move direction directly from axes
@@ -103,22 +102,25 @@ public class Player : MonoBehaviour {
 
 	Vector3 swapPos;
 	GameObject swapObj;
+	Material absorbedMat;
 
 	public void FixedUpdate()
 	{
 		
 		if (Input.GetButtonDown ("Absorb")) {
 			// Instantanious vs persistent
-			if (grabbedOrb.type == Orb.Type.Swap && swapTS == 0) {
+			if (grabbedOrb.type == Orb.Type.Swap && absorbed == false) {
 				swapTS = 1;
+				absorbed = true;
 			} else {
+				grabbedOrb.GetComponent<Renderer> ().material = absorbedMat;
 				absorbed = !absorbed;
 			}
 		}
 
 		if (swapTS == 1) {
 			Ray ray = Camera.main.ScreenPointToRay (new Vector3 (Screen.width / 2, Screen.height / 2, 0));
-			if (Physics.Raycast (ray, out hit, 40f)) {
+			if (Physics.Raycast (ray, out hit, 60f)) {
 				GameObject go = hit.collider.gameObject;
 				if (go.GetComponent<Orb> () != null) {
 					swapPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
@@ -130,6 +132,7 @@ public class Player : MonoBehaviour {
 		} else if(swapTS == 4){
 			swapObj.transform.position = swapPos;
 			swapTS = 0;
+			absorbed = false;
 		}
 		else if(swapTS != 0){
 			swapTS++;
@@ -138,11 +141,15 @@ public class Player : MonoBehaviour {
 
 	public void GrabOrb(GameObject go)
 	{
+		Color color = new Color(1, 1, 1, 0);
 		grabbedOrb = go.GetComponent<Orb> ();
 		grabbedOrb.grabbed = true;
 		foreach (Collider c in go.GetComponents<Collider>())
 			c.enabled = false;
 		grabbedOrb.GetComponent<Rigidbody>().Sleep ();
+
+		absorbedMat = grabbedOrb.GetComponent<Renderer> ().material;
+		absorbedMat.color = color;
 	}
 	public void DropOrb()
 	{
