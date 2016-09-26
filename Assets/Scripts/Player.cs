@@ -54,7 +54,7 @@ public class Player : MonoBehaviour {
 		rotationY += Input.GetAxis("Mouse Y") * sensitivityY * mod;
 		rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
 
-		Ray ray = new Ray(transform.position, Vector3.up * mod);
+		Ray ray;
 		if ((cc.collisionFlags & CollisionFlags.Above) != 0 || cc.isGrounded) {
 			vSpeed = 0;
 			// We are grounded, so recalculate
@@ -107,7 +107,7 @@ public class Player : MonoBehaviour {
 	public void FixedUpdate()
 	{
 		
-		if (Input.GetButtonDown ("Absorb")) {
+		if (Input.GetButtonDown ("Absorb") && grabbedOrb != null) {
 			// Instantanious vs persistent
 			if (grabbedOrb.type == Orb.Type.Swap && absorbed == false) {
 				swapTS = 1;
@@ -125,7 +125,16 @@ public class Player : MonoBehaviour {
 				if (go.GetComponent<Orb> () != null) {
 					swapPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 					swapObj = go;
-					transform.position = new Vector3 (go.transform.position.x, go.transform.position.y + 1, go.transform.position.z);
+
+					// Ball is on the ceiling or floor
+					ray = new Ray(go.transform.position, Vector3.up);
+					if (Physics.Raycast (ray, out hit, .5f)) {
+						transform.position = new Vector3 (go.transform.position.x, go.transform.position.y - .5f, go.transform.position.z);
+					}
+					ray = new Ray(go.transform.position, -Vector3.up);
+					if (Physics.Raycast (ray, out hit, .5f)) {
+						transform.position = new Vector3 (go.transform.position.x, go.transform.position.y + .5f, go.transform.position.z);
+					}
 					swapTS = 2;
 				}
 			}

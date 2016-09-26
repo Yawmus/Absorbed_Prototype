@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour {
 			finishZone.GetComponent<MeshRenderer> ().material.color = Color.white;
 			finishZone.GetComponent<FinishZone> ().enabled = true;
 			door.GetComponent<MoveOnComplete> ().enabled = true;
-			Debug.Log ("Level Complete - open door");
+			Debug.Log ("Level complete - open door");
 		} else {
 			finishZone.GetComponent<MeshRenderer> ().material.color = Color.black;
 			finishZone.GetComponent<FinishZone> ().enabled = false;
@@ -43,6 +43,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void ExitLevel()
 	{
-		Application.LoadLevel("MainMenu");
+		Debug.Log ("Goes to main menu");
+		//Application.LoadLevel("MainMenu");
 	}
 }
