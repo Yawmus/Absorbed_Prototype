@@ -15,7 +15,9 @@ public class FinishZone : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider other){
-		if (enabled && other.gameObject.GetComponent<Player> () != null)
-			Application.LoadLevel ("MainMenu");
+		if (enabled && other.gameObject.GetComponent<Player> () != null) {
+			Debug.Log ("Level done - load main menu");
+			//Application.LoadLevel ("MainMenu");
+		}
 	}
 }
