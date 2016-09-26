@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_levels/Prototype.unity
+- path: Assets/_levels/LightTest_sam.unity
   isLoaded: 1
   isActive: 1
