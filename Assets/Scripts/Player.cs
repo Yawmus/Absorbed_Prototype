@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 	public float minimumY = -60F;
 	public float maximumY = 60F;
 	float rotationY = 0f;
-	bool absorbed = false;
+	bool absorbed = false, canAbsorb = true;
 	public Orb grabbedOrb;
 	private CharacterController cc;
 	int swapTS = 0;
@@ -97,6 +97,21 @@ public class Player : MonoBehaviour {
 				ThrowOrb ();
 			}
 			// Absorb orb
+			if (Input.GetButtonDown ("Absorb") && canAbsorb) {
+				canAbsorb = false;
+				// Instantanious vs persistent
+				if (grabbedOrb.type == Orb.Type.Swap && absorbed == false) {
+					swapTS = 1;
+					absorbed = true;
+				} else {
+					grabbedOrb.GetComponent<Renderer> ().material = absorbedMat;
+					absorbed = !absorbed;
+				}
+			}
+		}
+
+		if (Input.GetButtonUp ("Absorb")) {
+			canAbsorb = true;
 		}
 	}
 
@@ -106,17 +121,6 @@ public class Player : MonoBehaviour {
 
 	public void FixedUpdate()
 	{
-		
-		if (Input.GetButtonDown ("Absorb") && grabbedOrb != null) {
-			// Instantanious vs persistent
-			if (grabbedOrb.type == Orb.Type.Swap && absorbed == false) {
-				swapTS = 1;
-				absorbed = true;
-			} else {
-				grabbedOrb.GetComponent<Renderer> ().material = absorbedMat;
-				absorbed = !absorbed;
-			}
-		}
 
 		if (swapTS == 1) {
 			Ray ray = Camera.main.ScreenPointToRay (new Vector3 (Screen.width / 2, Screen.height / 2, 0));
