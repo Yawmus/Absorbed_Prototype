@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: ff2f1d772b4bc12458ab125e25966e79
+timeCreated: 1474847508
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: L_FingerBase
+    100004: L_ForeArm
+    100006: L_Hand
+    100008: L_HandIndex1
+    100010: L_HandIndex2
+    100012: L_HandIndex3
+    100014: L_HandIndex4
+    100016: L_HandMiddle1
+    100018: L_HandMiddle2
+    100020: L_HandMiddle3
+    100022: L_HandMiddle4
+    100024: L_HandPinky1
+    100026: L_HandPinky2
+    100028: L_HandPinky3
+    100030: L_HandPinky4
+    100032: L_HandRing1
+    100034: L_HandRing2
+    100036: L_HandRing3
+    100038: L_HandRing4
+    100040: L_HandThumb1
+    100042: L_HandThumb2
+    100044: L_HandThumb3
+    100046: L_HandThumb4
+    100048: locator_left_arm
+    100050: locator_right_arm
+    100052: R_FingerBase
+    100054: R_ForeArm
+    100056: R_Hand
+    100058: R_HandIndex1
+    100060: R_HandIndex2
+    100062: R_HandIndex3
+    100064: R_HandIndex4
+    100066: R_HandMiddle1
+    100068: R_HandMiddle2
+    100070: R_HandMiddle3
+    100072: R_HandMiddle4
+    100074: R_HandPinky1
+    100076: R_HandPinky2
+    100078: R_HandPinky3
+    100080: R_HandPinky4
+    100082: R_HandRing1
+    100084: R_HandRing2
+    100086: R_HandRing3
+    100088: R_HandRing4
+    100090: R_HandThumb1
+    100092: R_HandThumb2
+    100094: R_HandThumb3
+    100096: R_HandThumb4
+    400000: //RootNode
+    400002: L_FingerBase
+    400004: L_ForeArm
+    400006: L_Hand
+    400008: L_HandIndex1
+    400010: L_HandIndex2
+    400012: L_HandIndex3
+    400014: L_HandIndex4
+    400016: L_HandMiddle1
+    400018: L_HandMiddle2
+    400020: L_HandMiddle3
+    400022: L_HandMiddle4
+    400024: L_HandPinky1
+    400026: L_HandPinky2
+    400028: L_HandPinky3
+    400030: L_HandPinky4
+    400032: L_HandRing1
+    400034: L_HandRing2
+    400036: L_HandRing3
+    400038: L_HandRing4
+    400040: L_HandThumb1
+    400042: L_HandThumb2
+    400044: L_HandThumb3
+    400046: L_HandThumb4
+    400048: locator_left_arm
+    400050: locator_right_arm
+    400052: R_FingerBase
+    400054: R_ForeArm
+    400056: R_Hand
+    400058: R_HandIndex1
+    400060: R_HandIndex2
+    400062: R_HandIndex3
+    400064: R_HandIndex4
+    400066: R_HandMiddle1
+    400068: R_HandMiddle2
+    400070: R_HandMiddle3
+    400072: R_HandMiddle4
+    400074: R_HandPinky1
+    400076: R_HandPinky2
+    400078: R_HandPinky3
+    400080: R_HandPinky4
+    400082: R_HandRing1
+    400084: R_HandRing2
+    400086: R_HandRing3
+    400088: R_HandRing4
+    400090: R_HandThumb1
+    400092: R_HandThumb2
+    400094: R_HandThumb3
+    400096: R_HandThumb4
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
