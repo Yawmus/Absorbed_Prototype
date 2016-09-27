@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_levels/LightTest_sam.unity
+- path: Assets/_levels/level1_polished_sam.unity
   isLoaded: 1
   isActive: 1
