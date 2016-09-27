@@ -94,7 +94,7 @@ public class Player : MonoBehaviour {
 				}
 			}
 		} else {
-			grabbedOrb.transform.position = Camera.main.transform.position + (Camera.main.transform.forward * .6f);
+			grabbedOrb.transform.position = Camera.main.transform.position + (Camera.main.transform.forward * .6f) + (-Camera.main.transform.right * .2f) + (-Camera.main.transform.up * .2f);
 			grabbedOrb.transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y - 90, transform.rotation.eulerAngles.z);
 
 			// Dropping orb
