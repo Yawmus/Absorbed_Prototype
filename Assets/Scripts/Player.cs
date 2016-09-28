@@ -20,10 +20,14 @@ public class Player : MonoBehaviour {
 	public Orb grabbedOrb;
 	private CharacterController cc;
 	int swapTS = 0;
+
+    public GameObject righthand;
+
 	// Use this for initialization
 	void Start () {
 		cc = GetComponent<CharacterController>();
-	}
+        righthand = GameObject.Find("Player/arms/locator_right_arm/R_ForeArm/R_Hand/R_FingerBase");
+    }
 
     // Update is called once per frame
     void Update() {
@@ -94,8 +98,9 @@ public class Player : MonoBehaviour {
 				}
 			}
 		} else {
-			grabbedOrb.transform.position = Camera.main.transform.position + (Camera.main.transform.forward * .6f) + (-Camera.main.transform.right * .2f) + (-Camera.main.transform.up * .2f);
-			grabbedOrb.transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y - 90, transform.rotation.eulerAngles.z);
+            grabbedOrb.transform.position = righthand.transform.position + (righthand.transform.up * -0.075f);
+            //grabbedOrb.transform.position = Camera.main.transform.position + (Camera.main.transform.forward * .6f) + (-Camera.main.transform.right * .2f) + (-Camera.main.transform.up * .2f);
+            grabbedOrb.transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y - 90, transform.rotation.eulerAngles.z);
 
 			// Dropping orb
 			if (Input.GetMouseButtonDown (0)) {
