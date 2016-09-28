@@ -24,8 +24,9 @@ public class LevelManager : MonoBehaviour {
 	void Update () {
 		bool temp = true;
 		foreach (Bin bin in bins)
-			if (!bin.satisfied)
+			if (!bin.satisfied) {
 				temp = false;
+			}
 
 		// Open door, level complete
 		if (temp) {
