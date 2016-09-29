@@ -10,6 +10,7 @@ public class OrbIndicators : MonoBehaviour {
 	public GameObject heldOrb;
 	public Material swapMat, flipMat, speedMat;
 	public GameObject player;
+	public GameObject speedX, swapX, flipX;
 	Material basic;
 
 	// Use this for initialization
@@ -26,12 +27,15 @@ public class OrbIndicators : MonoBehaviour {
 			switch (bin.expectedType) {
 			case Orb.Type.Speed:
 				speed.SetActive (!bin.satisfied);
+				speedX.SetActive (bin.satisfied);
 				break;
 			case Orb.Type.Swap:
 				swap.SetActive (!bin.satisfied);
+				swapX.SetActive (bin.satisfied);
 				break;
 			case Orb.Type.Flip:
 				flip.SetActive (!bin.satisfied);
+				flipX.SetActive (bin.satisfied);
 				break;
 			}
 		}
