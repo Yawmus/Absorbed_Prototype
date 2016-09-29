@@ -70,6 +70,7 @@ public class ArmController : MonoBehaviour
         }
         else
         {
+            anim.ResetTrigger(jumpHash);
             anim.ResetTrigger(holdingHash);
             if (distance_speed > .1f)
             {
