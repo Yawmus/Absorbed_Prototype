@@ -16,7 +16,8 @@ public class Player : MonoBehaviour {
 	public float minimumY = -60F;
 	public float maximumY = 60F;
 	float rotationY = 0f;
-	bool absorbed = false, canAbsorb = true;
+	bool canAbsorb = true;
+	public bool absorbed;
 	public Orb grabbedOrb;
 	private CharacterController cc;
 	int swapTS = 0;
@@ -196,6 +197,7 @@ public class Player : MonoBehaviour {
 			c.enabled = true;
 		grabbedOrb = null;
 		absorbed = false;
+		swapTS = 0;
 	}
 	public void ThrowOrb()
 	{
@@ -218,5 +220,6 @@ public class Player : MonoBehaviour {
 			c.enabled = true;
 		grabbedOrb = null;
 		absorbed = false;
+		swapTS = 0;
 	}
 }

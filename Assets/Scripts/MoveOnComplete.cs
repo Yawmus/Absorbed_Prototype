@@ -12,8 +12,7 @@ public class MoveOnComplete : MonoBehaviour {
 	}
 
 	void Update(){
-
-		Debug.Log (enabled); //It always equals true, never false. FIGURE THIS OUT
+		
 
 		if (enabled) {
 			gameObject.SetActive(false); 

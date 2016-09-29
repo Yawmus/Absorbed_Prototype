@@ -50,7 +50,7 @@ public class ArmController : MonoBehaviour
         distance_speed = Vector3.Distance(righthand.transform.position, speedorb.transform.position);
         distance_flip = Vector3.Distance(righthand.transform.position, fliporb.transform.position);
         distance_swap = Vector3.Distance(righthand.transform.position, swaporb.transform.position);
-        Debug.Log("Distance between speed orb and hand is " + distance_speed); //prints to console distance between hand and orb
+        //Debug.Log("Distance between speed orb and hand is " + distance_speed); //prints to console distance between hand and orb
 
         //holding or not holding SPEED ORB and driving corresponding animation.
         if (distance_speed < .099f)
